@@ -6,6 +6,7 @@ import { items } from './data/items';
 import { useEffect, useState } from "react";
 import { getMesRecorrente, filterListByMonth } from './helpers/dateFilter';
 import { TableArea } from "./components/TableArea";
+import { InfoArea } from "./components/InfoArea";
 
 const App = () => {
 
@@ -25,14 +26,15 @@ const App = () => {
       </S.Header>
 
       <S.Body>
-        {/** Area de Informações*/}
+        
+        <InfoArea />
 
         {/** Area de inserção*/}
 
-        {/** Tabela de itens*/}
         <TableArea 
-         list={list}
+         list={filterList}
         />
+
       </S.Body>
 
     </S.Container>

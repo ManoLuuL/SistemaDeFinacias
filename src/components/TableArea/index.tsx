@@ -1,8 +1,9 @@
 import { FC } from "react";
+import { TableItem } from "../TableItem";
 import { Props } from "./interface";
 import * as S from "./styles";
 
-export const TableArea: FC<Props> = ({list}) => {
+export const TableArea: FC<Props> = ({ list }) => {
     return (
         <S.Table>
             <thead>
@@ -14,7 +15,9 @@ export const TableArea: FC<Props> = ({list}) => {
                 </tr>
             </thead>
             <tbody>
-
+                {list.map((item, index) => (
+                    <TableItem key={index} item={item}/>
+                ))}
             </tbody>
         </S.Table>
     );
